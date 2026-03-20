@@ -595,9 +595,9 @@
   <h2 class="section-title reveal">Let&#39;s <em>connect</em></h2>
   <p class="contact-sub reveal">Open to conversations, collaborations, and opportunities that align with where I am heading.</p>
   <div class="contact-cards reveal">
-    <a href="/cdn-cgi/l/email-protection#2e4d4647454f404a47594f19186e49434f4742004d4143" class="contact-card">
+    <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#104;&#105;&#107;&#97;&#110;&#100;&#105;&#119;&#97;&#55;&#54;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="contact-card">
       <div class="contact-card-icon"><svg viewBox="0 0 30 30" fill="none"><rect x="3" y="7" width="24" height="16" rx="2" stroke="rgba(201,150,138,0.75)" stroke-width="1.4"/><path d="M3 9l12 9 12-9" stroke="rgba(201,150,138,0.75)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
-      <div class="contact-info"><div class="contact-type">Email</div><div class="contact-val"><span class="__cf_email__" data-cfemail="67040f0e0c0609030e1006505127000a060e0b4904080a">[email&#160;protected]</span></div></div>
+      <div class="contact-info"><div class="contact-type">Email</div><div class="contact-val">&#99;&#104;&#105;&#107;&#97;&#110;&#100;&#105;&#119;&#97;&#55;&#54;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</div></div>
     </a>
     <a href="https://linkedin.com/in/elicia-c-744022244" target="_blank" rel="noopener" class="contact-card">
       <div class="contact-card-icon"><svg viewBox="0 0 30 30" fill="none"><rect x="3" y="3" width="24" height="24" rx="4" stroke="rgba(201,150,138,0.75)" stroke-width="1.4"/><path d="M9 12v9M9 9v.5" stroke="rgba(201,150,138,0.75)" stroke-width="1.4" stroke-linecap="round"/><path d="M14 21v-5a3 3 0 016 0v5M14 12v9" stroke="rgba(201,150,138,0.75)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
@@ -683,14 +683,14 @@
     const obs=new IntersectionObserver(entries=>{
       if(entries[0].isIntersecting){
         let start=0,duration=1800,startTime=null;
-        (function step(ts){
+        requestAnimationFrame(function step(ts){
           if(!startTime)startTime=ts;
           const progress=Math.min((ts-startTime)/duration,1);
           const ease=1-Math.pow(1-progress,3);
           const current=Math.round(ease*num*10)/10;
           el.textContent=(Number.isInteger(num)?Math.round(current):current.toFixed(0))+(isPercent?'%':isPlus?'+':'');
           if(progress<1)requestAnimationFrame(step);
-        })(ts||performance.now());
+        });
         obs.disconnect();
       }
     },{threshold:0.5});
